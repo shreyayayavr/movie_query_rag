@@ -60,7 +60,7 @@ SQL:
 
     sql = response.choices[0].message.content.strip()
 
-    # ✅ Safety fallback: force full select if LLM messes up
+    # Safety fallback: force full select if LLM messes up
     if "select" in sql.lower() and "money_made" not in sql.lower():
         sql = sql.replace(
             sql.split("from")[0],
